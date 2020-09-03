@@ -22,6 +22,8 @@ import Profile from '../components/views/Profile';
 // import UserWallet from '../components/views/UserWallet';
 import EditProfile from '../components/views/EditProfile';
 
+
+import DeFiViewTransaction from '../components/views/DeFiViewTransaction';
 import ViewMilestone from '../components/views/ViewMilestone';
 import EditDAC from '../components/views/EditDAC';
 import ViewDAC from '../components/views/ViewDAC';
@@ -160,6 +162,21 @@ class Application extends Component {
                                               {/* Routes are defined here. Persistent data is set as props on components
                                 NOTE order matters, wrong order breaks routes!
                             */}
+
+
+                            /*
+                            
+                                DeFi ----- BAM!!!!
+                            
+                             */
+                             <Route 
+                                exact 
+                                path="/defi/view-defi-tx/:transactionId" 
+                                render={props => (
+                                <DeFiViewTransaction 
+                                  currentUser={currentUser}
+                                  transactionId={transactionId}
+                                  {...props} />)}/>
 
                                               <Route
                                                 exact
